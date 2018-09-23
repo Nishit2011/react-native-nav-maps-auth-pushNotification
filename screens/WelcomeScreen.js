@@ -8,11 +8,21 @@ const SLIDE_DATA = [
     {text:'Set your location, then swipe away',color:'#03A9F4'}
     
 ];
+//navigation property is passed to each of the screen 
+//from app.json , so we can use th props navigation
+//and the navigate property on it directly on all screen
+
+//Note:class level properties dont have access to props
+//because props only exist on instances of components
 class WelcomeScreen extends Component{
+    onSlidesComplete = () =>{
+        this.props.navigation.navigate('auth');
+    }
     render(){
         return(
             <View style={{flex:1}}>
-               <Slides data={SLIDE_DATA}/>
+               <Slides data={SLIDE_DATA} 
+               onComplete={this.onSlidesComplete}/>
             </View>
         )
     }

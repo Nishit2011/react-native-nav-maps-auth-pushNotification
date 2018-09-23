@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {createBottomTabNavigator} from 'react-navigation';
+import {createBottomTabNavigator,createStackNavigator} from 'react-navigation';
 
 import AuthScreen from './screens/AuthScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 import MapScreen from './screens/MapScreen';
 import DeckScreen from './screens/DeckScreen';
+import ReviewScreen from './screens/ReviewScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +17,13 @@ export default class App extends React.Component {
     main:{
       screen: createBottomTabNavigator({
         map:{screen:MapScreen},
-        deck:{screen:DeckScreen}
+        deck:{screen:DeckScreen},
+        review:{
+          screen: createStackNavigator({
+            review: ReviewScreen,
+            settings: SettingsScreen
+          })
+        }
       })
     }
 
@@ -31,8 +39,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#fff'
+    
   },
 });

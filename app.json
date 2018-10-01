@@ -9,6 +9,8 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    
+    
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -21,7 +23,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.reactnative.jobs",
+  "config": {
+    "googleMapsApiKey": "AIzaSyDa8wlOk1PYPNRlVGqVncrwe0-wDpS8xHU"
+  }
+    },
+    "android": {
+      "package": "com.jobs",
+      "config": {
+         "googleMaps": { "apiKey": "AIzaSyCd532dUPSQ0ySyLkrRN7-Qz8CjOiA2mYs" }   
+      }
+   }
   }
 }

@@ -41,6 +41,7 @@ class MapScreen extends Component{
         return(
             <View style={{flex:1}}>
                 <MapView 
+                provider="google"
                 region={this.state.region}
                 style={{flex:1}}
                 onRegionChangeComplete={this.onRegionChangeComplete}/>
